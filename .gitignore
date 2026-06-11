@@ -1,0 +1,33 @@
+# ─── 原始测量数据（1.92 GB，从 NLR Data Catalog 下载）───────────────────
+00_raw_datasets/
+
+# ─── 聚合后 Parquet 数据文件（558 MB，从原始数据重新生成）──────────────────
+01_aggregated_datasets/inference_offline_llama3_70b/results/
+01_aggregated_datasets/inference_online_finite_llama3_70b/results/
+01_aggregated_datasets/inference_online_rate_llama3_70b/results/
+01_aggregated_datasets/training/results/
+
+# ─── 全设施仿真大型 CSV 数据（226 MB）────────────────────────────────────
+03_whole-facility_profiles/**/*.csv
+
+# ─── Python 缓存 ─────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# ─── Jupyter 检查点 ───────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ─── 虚拟环境 ─────────────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+
+# ─── 系统文件 ─────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── 压缩包 ───────────────────────────────────────────────────────────────
+*.zip

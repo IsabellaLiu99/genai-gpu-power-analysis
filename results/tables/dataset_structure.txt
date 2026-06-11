@@ -1,0 +1,32 @@
+
+dataset/
+├── 00_raw_datasets/
+│   ├── inference_offline_llama3_70b/       # GPU+CPU raw logs (nvml+rapl)
+│   ├── inference_online_finite_llama3_70b/ # Online inference, finite requests
+│   ├── inference_online_rate_llama3_70b/   # Online inference, rate-limited
+│   ├── training_llama2_70b_lora/           # LLaMA-2 70B LoRA fine-tuning
+│   │   ├── 2node/  4node/  8node/  16node/
+│   └── training_stable_diffusion/          # Stable Diffusion training
+│       ├── 2node/  4node/  8node/  16node/
+│
+├── 01_aggregated_datasets/
+│   ├── training/                           # 41 parquet files, 0.2 s resolution
+│   │   ├── results/  metadata.csv  postprocess.py
+│   ├── inference_offline_llama3_70b/       # 1200 parquet files
+│   │   ├── results/  metadata.csv  postprocess.py
+│   ├── inference_online_finite_llama3_70b/ # 1026 parquet files
+│   │   ├── results/  metadata.csv  postprocess.py
+│   └── inference_online_rate_llama3_70b/  # 200 parquet files
+│       ├── results/  metadata.csv  postprocess.py
+│
+├── 02_analysis_scripts/
+├── 03_whole-facility_profiles/
+├── README.md
+└── requirements.txt
+
+Dataset Summary:
+  Resolution: 0.20 s  (training/fine-tuning), 0.1 s (inference)
+  Power column: power[W]  (GPU+CPU aggregated per job)
+  Training workloads: LLaMA-2 70B LoRA (2/4/8/16 nodes × 5 runs)
+                      Stable Diffusion (2/4/8/16 nodes × 5 runs)
+  Inference workloads: LLaMA-3 70B Offline / Online-Finite / Online-Rate

@@ -1,0 +1,7 @@
+Workload,Threshold_%,N_events,Mean_duration_s,Mean_drop_%,Mean_interval_s
+LLaMA2-LoRA,5,161,7.37,15.64,12.84
+LLaMA2-LoRA,10,161,5.05,16.74,12.84
+LLaMA2-LoRA,15,24,17.56,20.97,89.35
+StableDiff,5,5,40.96,63.55,344.25
+StableDiff,10,5,39.24,65.89,344.3
+StableDiff,15,5,38.52,67.33,344.4
